@@ -1,0 +1,12 @@
+### @name Request Name --> ex: login 
+
+// Type your Request to get Token 
+
+{{
+
+  const fs = require('fs');
+  const token = response.parsedBody.token;
+  fs.writeFileSync('./token.txt', token); // ✅ Save token to file
+  $global.LoginToken = token;
+
+}}

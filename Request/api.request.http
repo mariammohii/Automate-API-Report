@@ -1,0 +1,11 @@
+@ref ./api.login.http
+
+{{
+  const fs = require('fs');
+  $global.LoginToken = fs.readFileSync('./token.txt', 'utf8'); // ✅ Read token back
+}}
+
+### @name Request to call token 
+
+// write your request here
+Authorization: Bearer {{$global.LoginToken}}
