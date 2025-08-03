@@ -8,4 +8,13 @@
 ### @name Request to call token 
 
 // write your request here
+GET {{baseURL}}/users?page=2
 Authorization: Bearer {{$global.LoginToken}}
+
+{{
+  const assert = require('assert');
+  const jsonData = response.parsedBody;
+  test("Status code is 200", () => {
+    assert.equal(response.statusCode, 200);
+  });
+}}
