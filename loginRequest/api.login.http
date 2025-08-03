@@ -1,9 +1,20 @@
+
 ### @name Request Name --> ex: login 
 
 // Type your Request to get Token 
-
+POST {{baseURL}}/login
+Content-Type: application/json
+x-api-key: reqres-free-v1
+{
+  "email": "{{email}}",
+  "password": "{{password}}"
+}
 {{
-
+  const assert = require('assert');
+  const jsonData = response.parsedBody;
+  test("Status code is 200", () => {
+    assert.equal(response.statusCode, 200);
+  });
   const fs = require('fs');
   const token = response.parsedBody.token;
   fs.writeFileSync('./token.txt', token); // ✅ Save token to file
